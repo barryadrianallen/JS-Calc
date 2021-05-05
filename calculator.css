@@ -10,7 +10,7 @@
   
 body{
     background-color: var(--lightgray-color);
-    color: rgb(230, 230, 230);
+    color: white;
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
   }
@@ -19,7 +19,7 @@ body{
     padding: 30px;
     max-width: 250px;
     height: 400px;
-    background-color: rgb(245, 243, 243);
+    background-color:var(--off-black-color);
     border-radius: 10px;
     margin: 100px auto auto auto;
     width: 50%;
@@ -29,7 +29,7 @@ body{
 }
 
 .rounded-edges {
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .circle-border {
@@ -39,7 +39,7 @@ body{
 
 #display{
     grid-column: 1 / 5;
-    background-color: rgb(214, 214, 214);
+    background-color: var(--off-black-color);
     border: 1px solid rgb(148, 148, 148);
     white-space: nowrap;
     overflow: hidden;
@@ -48,14 +48,16 @@ body{
     font-size: 1.5em;
     padding-top: 10px;
     padding-right: 10px;
-}
-
-#equals{
-    background-color: rgb(142,253,153);
+    margin-bottom: 4%;
 }
 
 #div-clear{
     background-color: rgb(209, 209, 209);
+    color: var(--off-black-color);
+    font-size: 0.8em;
+    position: relative;
+    align-items: center;
+    margin: 5px;
 }
   
 #zero{
@@ -63,22 +65,32 @@ body{
 }
   
 .numberButtonStyle{
-    background-color: rgb(209, 209, 209);
+    background-color: var(--darkgray-color);
+    margin: 5px;
+    font-size: 0.8em;
+    align-items: center;
 }
 
 .blank-button{
     background-color: rgb(209, 209, 209);
+    position: relative;
+    align-items: center;
+    margin: 5px;
 }
 
 .operatorButtonColour{
-    background-color: rgb(255,178,244);
+    background-color: var(--orange-highlight);
+    position: relative;
+    align-items: center;
+    font-size: 0.8em;
+    margin: 5px;
 }
   
 .centre-text{
     text-align: center;
     padding-top: 8px;
     cursor: pointer;
-    color: darkgray;
+    color: white;
 }
 
 .numberButtonStyle:hover{ 
@@ -99,12 +111,12 @@ body{
 }
 
 .operatorButtonColour:hover{
-    background-color: rgb(255,249,150);
+    background-color: rgb(247, 145, 97);
 }
 
 .operatorButtonColour:active,
 .operatorButtonColour.activeOperator{
-    background-color: rgb(226, 222, 139);
+    background-color: rgb(243, 126, 72);
 }
 
 #div-clear:hover{

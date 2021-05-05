@@ -23,7 +23,6 @@ const resetCalculator = function(){
     userValueArray = [];
 }
 
-//Takes text as an argument and assigns it to displayText.textContent
 const updateDisplay = function(text){
     displayText.textContent = text;
 }
