@@ -1,5 +1,4 @@
 :root {
-    --main-bg-color: rgb(35,31,32);
     --orange-highlight: rgb(255,80,1);
     --lightgray-color: rgb(239,239,239);
     --midgray-color: rgb(179,174,168);
@@ -10,7 +9,7 @@
   }
   
 body{
-    background-color: rgb(208, 209, 209);
+    background-color: var(--lightgray-color);
     color: rgb(230, 230, 230);
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
