@@ -1,4 +1,4 @@
-const displayText = document.querySelector("#display");
+/*const displayText = document.querySelector("#display");
 const buttonOne = document.querySelector("#one");
 const buttonTwo = document.querySelector("#two");
 const buttonThree = document.querySelector("#three");
@@ -12,19 +12,21 @@ const plusButton = document.querySelector("#plus");
 const minusButton = document.querySelector("#minus");
 const multiplyButton = document.querySelector("#multiply");
 const divideButton = document.querySelector("#divide");
-const equalsButton = document.querySelector("#equals");
+const equalsButton = document.querySelector("#equals"); */
+
+import {domElement} from './dom-elements.js';
 
 var result = 0;
 
 const resetCalculator = function(){
-    displayText.textContent = "0";
+    domElement.displayText.textContent = "0";
     result = 0;
     currentValue = "";
     userValueArray = [];
 }
 
 const updateDisplay = function(text){
-    displayText.textContent = text;
+    domElement.displayText.textContent = text;
 }
 
 //This is called when the onclick function in HTML is fired - when user clicks in the div
@@ -81,70 +83,70 @@ document.addEventListener('keypress', function(event){
             updateUserValue(event.key);
             break;
         case "1":
-            buttonOne.classList.add("active");
+            domElement.buttonOne.classList.add("active");
             setTimeout(function() {
                 buttonOne.classList.remove("active");
             }, 100);
             updateUserValue(event.key);
             break;
         case "2":
-            buttonTwo.classList.add("active");
+            domElement.buttonTwo.classList.add("active");
             setTimeout(function() {
                 buttonTwo.classList.remove("active");
             }, 100);
             updateUserValue(event.key);
             break;
         case "3":
-            buttonThree.classList.add("active");
+            domElement.buttonThree.classList.add("active");
             setTimeout(function() {
                 buttonThree.classList.remove("active");
             }, 100);
             updateUserValue(event.key);
             break;
         case "4":
-            buttonFour.classList.add("active");
+            domElement.buttonFour.classList.add("active");
             setTimeout(function() {
                 buttonFour.classList.remove("active");
             }, 100);
             updateUserValue(event.key);
             break; 
         case "5":
-            buttonFive.classList.add("active");
+            domElement.buttonFive.classList.add("active");
             setTimeout(function() {
                 buttonFive.classList.remove("active");
             }, 100);
             updateUserValue(event.key);
             break;
         case "6":
-            buttonSix.classList.add("active");
+            domElement.buttonSix.classList.add("active");
             setTimeout(function() {
                 buttonSix.classList.remove("active");
             }, 100);
             updateUserValue(event.key);
             break;
         case "7":
-            buttonSeven.classList.add("active");
+            domElement.buttonSeven.classList.add("active");
             setTimeout(function() {
                 buttonSeven.classList.remove("active");
             }, 100);
             updateUserValue(event.key);
             break;
         case "8":
-            buttonEight.classList.add("active");
+            domElement.buttonEight.classList.add("active");
             setTimeout(function() {
                 buttonEight.classList.remove("active");
             }, 100);
             updateUserValue(event.key);
             break;
         case "9":
-            buttonNine.classList.add("active");
+            domElement.buttonNine.classList.add("active");
             setTimeout(function() {
                 buttonNine.classList.remove("active");
             }, 100);
             updateUserValue(event.key);
             break;
         case "+":
-        plusButton.classList.add("activeOperator");
+            domElement.plusButton.classList.add("activeOperator");
         //setTimeout(), this time with arrow functions
         setTimeout(() => {
             plusButton.classList.remove("activeOperator");
@@ -152,28 +154,28 @@ document.addEventListener('keypress', function(event){
             placeValueInArray(event.key);
             break;
         case "-":
-            minusButton.classList.add("activeOperator");
+            domElement.minusButton.classList.add("activeOperator");
             setTimeout(() => {
                 minusButton.classList.remove("activeOperator");
             }, 100);
             placeValueInArray(event.key);
             break;
         case "*":
-            multiplyButton.classList.add("activeOperator");
+            domElement.multiplyButton.classList.add("activeOperator");
             setTimeout(() => {
                 multiplyButton.classList.remove("activeOperator");
             }, 100);
             placeValueInArray(event.key);
             break;
         case "/":
-            divideButton.classList.add("activeOperator");
+            domElement.divideButton.classList.add("activeOperator");
             setTimeout(() => {
                 divideButton.classList.remove("activeOperator");
             }, 100);
             placeValueInArray(event.key);
             break;
         case "=":
-            equalsButton.classList.add("activeOperator");
+            domElement.equalsButton.classList.add("activeOperator");
             setTimeout(() => {
                 equalsButton.classList.remove("activeOperator");
             }, 100);
@@ -184,3 +186,5 @@ document.addEventListener('keypress', function(event){
           
       }         
 });
+
+console.log(domElement);
