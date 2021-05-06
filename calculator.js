@@ -41,12 +41,16 @@ var userValueArray = [];
 //This function is called when '+, -, ÷, *' is clicked and the relevant operator
 //is passed. 
 function placeValueInArray(operator){
-    
-    //Calling this function here allows us to display the running total
-    calculateResult();
-    userValueArray.push(currentValue);
-    userValueArray.push(operator);
-    currentValue = "";
+    //Prevent the operater being the first item in userValueArray
+    if (userValueArray.length == 0 && currentValue == "") {
+        resetCalculator();
+    } else {
+        //Calling this function here allows us to display the running total
+        calculateResult();
+        userValueArray.push(currentValue);
+        userValueArray.push(operator);
+        currentValue = "";
+    }  
 }
 
 //Called when '=' button is clicked 
