@@ -1,81 +1,87 @@
-const displayText = document.querySelector("#display");
+const displayScreen = document.querySelector("#display");
 const buttonOne = document.querySelector("#one");
 const buttonTwo = document.querySelector("#two");
 const buttonThree = document.querySelector("#three");
-const buttonFour = document.querySelector("#four");
-const buttonFive = document.querySelector("#five");
-const buttonSix = document.querySelector("#six");
-const buttonSeven = document.querySelector("#seven");
-const buttonEight = document.querySelector("#eight");
-const buttonNine = document.querySelector("#nine");
 const plusButton = document.querySelector("#plus");
-const minusButton = document.querySelector("#minus");
-const multiplyButton = document.querySelector("#multiply");
-const divideButton = document.querySelector("#divide");
 const equalsButton = document.querySelector("#equals");
 
-var result = 0;
-
-const resetCalculator = function(){
-    displayText.textContent = "0";
-    result = 0;
-    currentValue = "";
-    userValueArray = [];
+let app = {
+    result: 0,
+    num1: 0,
+    num2: 0,
+    currentValue: "",
+    currentOperation: "",
+    runningTotal: 0
 }
 
-const updateDisplay = function(text){
-    displayText.textContent = text;
+resetCalculator = () => {
+    app.result = 0;
+    app.currentValue = "";
+    app.num1 = 0;
+    app.num2 = 0;
+    displayScreen.textContent = 0;
 }
 
-//This is called when the onclick function in HTML is fired - when user clicks in the div
-//Each div passes an argument e.g '2' or '+'
-var currentValue = "";
-function updateUserValue(value){
-    //currentValue is appended each time a number button is clicked
-    currentValue += value;
-    updateDisplay(currentValue);
+updateDisplay = (text) => {
+    displayScreen.textContent = text;
 }
 
-var userValueArray = [];
+handleNumberClick = (value) => {
+    app.currentValue += value;
+    updateDisplay(app.currentValue);
+}
 
-//This function is called when '+, -, ÷, *' is clicked and the relevant operator
-//is passed. 
-function placeValueInArray(operator){
-    //Prevent the operater being the first item in userValueArray
-    if (userValueArray.length == 0 && currentValue == "") {
-        resetCalculator();
+handleOperationClick = (value) => {
+    if (app.result != 0) {
+        app.num1 = app.result
     } else {
-        //Calling this function here allows us to display the running total
-        calculateResult();
-        userValueArray.push(currentValue);
-        userValueArray.push(operator);
-        currentValue = "";
-    }  
-}
-
-//Called when '=' button is clicked 
-function calculateResult(){
-    let totalUserExpression = "";
-
-    //We need to add the last number to our array before doing the calculation
-    userValueArray.push(currentValue);
-
-    //Each value in the array is added to the totalUserExpression var
-    for (i=0; i<userValueArray.length; i++){
-        totalUserExpression += userValueArray[i];
+        app.num1 = parseInt(app.currentValue);
     }
-    //eval() requires the format ("2+5.7-6.3") as an argument, for example
-    result = eval(totalUserExpression);
-
-    updateDisplay(result);
-
-    //We replace the values in the array with the result, which allows the calculator
-    //to continue.
-    userValueArray = [result]; 
-    currentValue = ""
+    app.currentOperation = value;
+    app.currentValue = "";
+    updateDisplay(value);
 }
 
-document.addEventListener('keypress', function(event){
+add = (_num1, _num2) => {
+    return _num1 + _num2;
+}
+
+subtract = (_num1, _num2) => {
+    return _num1 - _num2;
+}
+
+multiply = (_num1, _num2) => {
+    return _num1 * _num2;
+}
+
+divide = (_num1, _num2) => {
+    return _num1 / _num2;
+}
+
+calculateResult = () => {
+    app.num2 = parseInt(app.currentValue);
+    switch (app.currentOperation) {
+        case "+":
+            app.result = add(app.num1, app.num2);
+            updateDisplay(app.result);
+            break;
+        case "-":
+            app.result = subtract(app.num1, app.num2);
+            updateDisplay(app.result);
+            break;
+        case "*":
+            app.result = multiply(app.num1, app.num2);
+            updateDisplay(app.result);
+            break;
+        case "/":
+            app.result = divide(app.num1, app.num2);
+            updateDisplay(app.result);
+            break;
+    }
+    
+}
+
+document.addEventListener('keypress', (event) => {
     switch(event.key) {
         case "0":
             updateUserValue(event.key);
