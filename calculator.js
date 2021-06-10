@@ -35,7 +35,7 @@ handleOperationClick = (value) => {
     if (app.result != 0) {
         app.num1 = app.result
     } else {
-        app.num1 = parseInt(app.currentValue);
+        app.num1 = parseFloat(app.currentValue);
     }
     app.currentOperation = value;
     app.currentValue = "";
@@ -59,7 +59,7 @@ divide = (_num1, _num2) => {
 }
 
 calculateResult = () => {
-    app.num2 = parseInt(app.currentValue);
+    app.num2 = parseFloat(app.currentValue);
     switch (app.currentOperation) {
         case "+":
             app.result = add(app.num1, app.num2);
