@@ -10,8 +10,7 @@ let app = {
     num1: 0,
     num2: 0,
     currentValue: "",
-    currentOperation: "",
-    runningTotal: 0
+    currentOperation: ""
 }
 
 resetCalculator = () => {
@@ -32,6 +31,7 @@ handleNumberClick = (value) => {
 }
 
 handleOperationClick = (value) => {
+    calculateResult();
     if (app.result != 0) {
         app.num1 = app.result
     } else {
@@ -39,7 +39,6 @@ handleOperationClick = (value) => {
     }
     app.currentOperation = value;
     app.currentValue = "";
-    updateDisplay(value);
 }
 
 add = (_num1, _num2) => {
@@ -76,6 +75,8 @@ calculateResult = () => {
         case "/":
             app.result = divide(app.num1, app.num2);
             updateDisplay(app.result);
+            break;
+        default:
             break;
     }
     
@@ -155,28 +156,24 @@ document.addEventListener('keypress', (event) => {
         setTimeout(() => {
             plusButton.classList.remove("activeOperator");
         }, 100);
-            placeValueInArray(event.key);
             break;
         case "-":
             minusButton.classList.add("activeOperator");
             setTimeout(() => {
                 minusButton.classList.remove("activeOperator");
             }, 100);
-            placeValueInArray(event.key);
             break;
         case "*":
             multiplyButton.classList.add("activeOperator");
             setTimeout(() => {
                 multiplyButton.classList.remove("activeOperator");
             }, 100);
-            placeValueInArray(event.key);
             break;
         case "/":
             divideButton.classList.add("activeOperator");
             setTimeout(() => {
                 divideButton.classList.remove("activeOperator");
             }, 100);
-            placeValueInArray(event.key);
             break;
         case "=":
             equalsButton.classList.add("activeOperator");
