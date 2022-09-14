@@ -120,11 +120,19 @@ body{
 }
 
 #div-clear:hover{
-    background-color: rgb(255,249,150);
+    background-color: rgb(239,239,239);
+}
+
+#div-clear:active{
+    background-color: rgb(209, 209, 209);
 }
 
 #equals:hover{
-    background-color: rgb(255,249,150);
+    background-color: rgb(247, 145, 97);
+}
+
+#equals:active{
+    background-color: rgb(243, 126, 72);
 }
 
 
