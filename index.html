@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+	<link rel="stylesheet" href="calculator.css"> 
+</head>
+<body>
+	<div id="container">
+ 
+        <div class="rounded-edges" id="display">0</div>
+        <div id="div-clear" class="centre-text circle-border" onclick="resetCalculator()">AC</div>
+        <div class="blank-button circle-border"></div>
+        <div class="blank-button circle-border"></div>
+        <div id="divide" class="operatorButtonColour centre-text circle-border" onclick="handleOperationClick('/')">/</div>
+        <div id="seven" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('7')">7</div>
+        <div id="eight" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('8')">8</div>
+        <div id="nine" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('9')">9</div>
+        <div id="multiply" class="operatorButtonColour centre-text circle-border" onclick="handleOperationClick('*')">x</div>
+        <div id="four" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('4')">4</div>
+        <div id="five" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('5')">5</div>
+        <div id="six" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('6')">6</div>
+        <div id="minus" class="operatorButtonColour centre-text circle-border" onclick="handleOperationClick('-')">-</div>
+        <div id="one" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('1')">1</div>
+        <div id="two" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('2')">2</div>
+        <div id="three" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('3')">3</div>
+        <div id="plus" class="operatorButtonColour centre-text circle-border" onclick="handleOperationClick('+')">+</div>
+        <div id="zero" class="numberButtonStyle centre-text rounded-edges" onclick="handleNumberClick('0')">0</div>
+        <div id="decimal" class="numberButtonStyle centre-text circle-border" onclick="handleNumberClick('.')">.</div>
+        <div id="equals" class="operatorButtonColour centre-text circle-border" onclick="calculateResult()">=</div>
+    </div>
+	
+	    <script src="./calculator.js"></script>
+        
+</body>
+</html>
