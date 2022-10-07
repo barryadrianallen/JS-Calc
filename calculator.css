@@ -127,7 +127,9 @@ body{
 }
 
 /*Mobile screen size*/
-@media (max-width: 1000px) {
+@media only screen and (max-device-width:480px), 
+only screen and (-webkit-min-device-pixel-ratio: 2)
+{
     body {
         background-color: blue;
     }
@@ -169,7 +171,8 @@ body{
 }
 
 /*Desktop screen size*/
-@media (min-width: 1001px) {
+@media only screen and (min-device-width:600px)
+{
     body {
         background-color: red;
     }
