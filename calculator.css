@@ -96,25 +96,17 @@ body{
     background-color: rgb(180, 180, 180);
 }
 
-/* .numberButtonStyle:active{
-    background-color: rgb(140, 140, 140);
-}
-.numberButtonStyle.active {
-    background-color: rgb(140, 140, 140);
-} */
-
-/*This is shorthand for the commented out code above*/
 .numberButtonStyle:active,
 .numberButtonStyle.active{
     background-color: rgb(140, 140, 140);
 }
 
-.operatorButtonColour:hover{
+.operatorButtonStyle:hover{
     background-color: rgb(247, 145, 97);
 }
 
-.operatorButtonColour:active,
-.operatorButtonColour.activeOperator{
+.operatorButtonStyle:active,
+.operatorButtonStyle.activeOperator{
     background-color: rgb(243, 126, 72);
 }
 
