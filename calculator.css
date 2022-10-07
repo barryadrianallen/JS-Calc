@@ -135,7 +135,7 @@ body{
 }
 
 /*Mobile screen size*/
-@media (max-width: 520px) {
+@media (max-width: 800px) {
     body {
         background-color: blue;
     }
@@ -177,7 +177,7 @@ body{
 }
 
 /*Desktop screen size*/
-@media (min-width: 700px) {
+@media (min-width: 801px) {
     body {
         background-color: red;
     }
