@@ -1,3 +1,12 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 :root {
     --orange-highlight: rgb(255,80,1);
     --lightgray-color: rgb(239,239,239);
@@ -16,10 +25,10 @@ body{
   }
   
 #container{
-    padding: 1.2em;
-    height:1000px;
-    width: 600px;
-    margin: 4em auto;
+    padding: 0.7em;
+    height:10em;
+    width: 6.5em;
+    margin: 2em auto;
     background-color:var(--off-black-color);
     border-radius: 20px;
     box-shadow:20px 20px 10px grey;
@@ -46,16 +55,17 @@ body{
     text-align: right;
     margin-bottom: 0.5em;
     padding: 0.3em 0.5em 0em 0.5em;
-    font-size: 2.8em;
+    font-size: 1em;
 }
 
 #div-clear{
     background-color: rgb(209, 209, 209);
     color: var(--off-black-color);
-    font-size: 1em;
+    font-size: 0.4em;
     position: relative;
     align-items: center;
-    margin: 5px;
+    margin: 0.1em;
+    padding-top: 0.6em;
 }
   
 #zero{
@@ -64,8 +74,8 @@ body{
   
 .numberButtonStyle{
     background-color: var(--darkgray-color);
-    margin: 5px;
-    font-size: 1.1em;
+    margin: 0.1em;
+    font-size: 0.5em;
     align-items: center;
 }
 
@@ -73,20 +83,20 @@ body{
     background-color: rgb(209, 209, 209);
     position: relative;
     align-items: center;
-    margin: 5px;
+    margin: 0.1em;
 }
 
 .operatorButtonStyle{
     background-color: var(--orange-highlight);
     position: relative;
     align-items: center;
-    font-size: 1.05em;
-    margin: 5px;
+    font-size: 0.5em;
+    margin: 0.1em;
 }
   
 .centre-text{
     text-align: center;
-    padding-top: 0.8em;
+    padding-top: 0.4em;
     cursor: pointer;
     color: white;
 }
